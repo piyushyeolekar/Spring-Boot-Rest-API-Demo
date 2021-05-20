@@ -25,7 +25,11 @@ public class bookService {
     public book getBookById(int id){
         
         book b = null;
-        b = list.stream().filter(e -> e.getId() == id).findFirst().get();
+        try{
+            b = list.stream().filter(e -> e.getId() == id).findFirst().get();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         return b;
     }
 
@@ -45,7 +49,7 @@ public class bookService {
                 b.setTitle(b1.getTitle());
                 b.setAuthor(b1.getAuthor());
             }
-            return b;
+            return b;   
         } ).collect(Collectors.toList());
     }
 }
