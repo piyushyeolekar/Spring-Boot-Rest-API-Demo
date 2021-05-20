@@ -12,6 +12,8 @@ import org.springframework.stereotype.Component;
 public class bookService {
     
     private static List<book> list = new ArrayList<>();
+    
+    //demo data
     static{
         list.add(new book(1, "Geeta", "Krishna"));
         list.add(new book(2, "Ramayan", "Valmiki"));
